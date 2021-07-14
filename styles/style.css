@@ -48,13 +48,37 @@ main{
     margin-right: 140.99px;
     transition: transform 3s;
 }
-/* Animation start */
+/* Animation part start */
+marquee{
+    height: auto;
+}
+.ball{
+    max-width: 90px;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-180deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* Animation part end */
 .header-image img:hover {
     width: 556.01px;
     height: 438px;
     transform: rotate(360deg);
 }
-/* Animation end */
 /* navigation style */
 .navigation{
     display: flex;
@@ -198,7 +222,7 @@ main{
     margin-top: 25px;
     margin-right: 60px;
 }
-.partners-logo .logo img{
+.partners-logo .logo a img{
     width: 200px;
     height: 140px;
 }
@@ -214,13 +238,14 @@ main{
     height: 110px;
     margin-bottom: 20px;
 }
-.footer .footer-copyright p.contact{
+.footer .footer-copyright p.contact a{
+    text-decoration: none;
     font-weight: 700;
     color: #969BAB;
     margin-top: o;
     margin-bottom: 0;
 }
-.footer .footer-copyright p.contact .fas,.fab{
+.footer .footer-copyright p.contact a .fas,.fab{
     padding: 7.47px;
     margin-left: 12px;
     margin-right: 14px;
@@ -240,8 +265,11 @@ main{
         width: 100%;
         height: auto;
     }
-    .navigation{
+    .navigation ul{
         display: none;
+    }
+    .navigation .log-in{
+        margin-left: 40%;
     }
     .header-item{
         display: flex;
