@@ -48,11 +48,13 @@ main{
     margin-right: 140.99px;
     transition: transform 3s;
 }
+/* Animation start */
 .header-image img:hover {
     width: 556.01px;
     height: 438px;
     transform: rotate(360deg);
 }
+/* Animation end */
 /* navigation style */
 .navigation{
     display: flex;
@@ -125,14 +127,18 @@ main{
 }
 /* Higlights style */
 .highlights{
+    display: flex;
+    flex-direction: column;
     margin-top: 40px;
 }
-h2 span{
+.highlights h2 span{
+    grid-template-columns: repeat(1, 1fr);
     font-size: 36px;
-    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.781), rgba(0, 128, 0, 0.788));
+    background-image: linear-gradient(to right, rgba(0, 255, 115, 0.781), rgba(83, 128, 0, 0.788));
     padding: 15px;
     border-radius: 50px;
     margin-top: 40px;
+    margin-left: 41%;
 }
 .video-list{
     display: flex;
@@ -144,13 +150,14 @@ h2 span{
     background-color: #ffffff;
     width: 330px;
     padding: 15px 0px 15px 15px;
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-top: 40px;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    margin-left: 10px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
 }
 .video-file video{
     width: 300px;
-}
 }
 .video-info{
     width: 300px;
@@ -163,15 +170,37 @@ h2 span{
     color: #6C6C6C;
     font-size: 18px;
 }
-/* Gallery styles */
-.gallery{
+.highlights span a{
+    text-decoration: none;
+    color: #ffffff;
+    display: inline;
+    background-color: #E02C6D;
+    padding: 10px 24px 10px 24px;
+    margin-left: 43%;
+}
+/* Partners styles */
+.partners{
     margin-top: 40px;
 }
-.gallery h2 span{
+.partners h2 span{
     font-size: 36px;
-    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.781), rgba(0, 128, 0, 0.788));
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(255, 251, 0, 0.781), rgba(0, 128, 0, 0.788));
     padding: 15px;
     border-radius: 50px;
+    margin-left: 27%;
+}
+.partners-logo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.logo{
+    margin-top: 25px;
+    margin-right: 60px;
+}
+.partners-logo .logo img{
+    width: 200px;
+    height: 140px;
 }
 /* footer style */
 .footer{
@@ -180,26 +209,113 @@ h2 span{
     align-items: center;
     margin-top: 156px;
 }
-.footer img{
+.footer .footer-logo img{
     width: 483.87px;
     height: 110px;
     margin-bottom: 20px;
 }
-.footer p.contact{
+.footer .footer-copyright p.contact{
     font-weight: 700;
     color: #969BAB;
     margin-top: o;
     margin-bottom: 0;
 }
-.footer p.contact .fas,.fab{
+.footer .footer-copyright p.contact .fas,.fab{
     padding: 7.47px;
+    margin-left: 12px;
     margin-right: 14px;
     border-radius: 20px;
     background-color: rgba(128, 128, 128, 0.397);
 }
-.footer p.copyright{
+.footer .footer-copyright p.copyright{
     color: #000000;
     font-weight: 400;
     font-size: 18px;
     margin-top: 20px;
+}
+/* Media Queries */
+/* Mobile Devices */
+@media only screen and (max-width:688px){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .navigation{
+        display: none;
+    }
+    .header-item{
+        display: flex;
+        flex-direction: column;
+    }
+    .header-about{
+        color: #ffffff;
+        margin-left: 30px;
+        margin-bottom: 50px;
+    }
+    .header-image img{
+        width: 329px;
+        height: 259.17px;
+        margin: 20px 20px 40px 20px;
+        transition: transform 3s;
+    }
+    .header-image img:hover {
+        width: 329px;
+        height: 259.17px;
+        transform: rotate(360deg);
+    }
+    .container{
+        width: 100%;
+    }
+    .top-players{
+        display: flex;
+        flex-direction: column;
+        row-gap: 27px;
+    }
+    .player{
+        margin-left: 30px;
+    }
+    .other-players{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .highlights{
+        width: 100%;
+    }
+    .highlights h2 span{
+        margin-left: 25px;
+    }
+    .video-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .highlights span a{
+        margin-left: 25%;
+    }
+    .partners{
+        width: 100%;
+    }
+    .partners h2 span{
+        margin-left: 25px;
+    }
+    .partners-logo{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 90px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 43px;
+        margin-left: 18px;
+        width: 280px;
+        height: 175px;
+    }
+    .footer-copyright{
+        
+    }
+    .footer .footer-logo img{
+        width: 271px;
+        height: 63px;
+    }
 }
